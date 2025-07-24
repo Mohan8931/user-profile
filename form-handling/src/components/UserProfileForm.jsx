@@ -258,7 +258,7 @@ export default function UserProfileForm() {
 
   return (
     <div className="fixed inset-0 bg-gradient-to-t from-[#A1BBDA] to-transparent flex items-center justify-center p-4">
-      <div className="w-full max-w-xs sm:max-w-sm bg-white/90 backdrop-blur-lg shadow-xl rounded-xl border border-white/30 p-4 sm:p-6 overflow-y-auto" style={{ maxHeight: '90vh' }}>
+      <div className="w-full max-w-xs sm:max-w-sm bg-white/90 backdrop-blur-lg shadow-xl rounded-xl border border-white/30 px-4 py-4" style={{ maxHeight: '90vh' }}>
         {toast && (
           <Toast 
             message={toast.message} 
@@ -267,17 +267,17 @@ export default function UserProfileForm() {
           />
         )}
 
-        <div className="text-center mb-4">
-          <div className="inline-flex items-center justify-center w-8 h-8 bg-[#3350E8] rounded-lg shadow-md mb-2">
+        <div className="text-center mb-3">
+          <div className="inline-flex items-center justify-center w-7 h-7 bg-[#3350E8] rounded-lg shadow-md mb-1">
             <FaUser className="text-white text-sm" />
           </div>
-          <h2 className="text-lg sm:text-xl font-bold text-[#3350E8]">
+          <h2 className="text-base sm:text-lg font-bold text-[#3350E8]">
             User Profile
           </h2>
-          <p className="text-gray-600 text-xs sm:text-sm mt-1">Complete your profile information</p>
+          <p className="text-gray-600 text-xs sm:text-sm">Complete your profile information</p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3">
           <div>
             <InputField 
               name="firstName" 
@@ -354,11 +354,11 @@ export default function UserProfileForm() {
             />
           </div>
           <div className="sm:col-span-2">
-            <div className="mb-3">
+            <div className="mb-2 sm:mb-3">
               <label className="block text-xs sm:text-sm font-semibold text-gray-700 mb-1">Gender</label>
               <div className="relative">
-                <div className="absolute top-1/2 -translate-y-1/2 left-0 pl-3 flex items-center pointer-events-none">
-                  <FaVenusMars className={`h-4 w-4 ${focusedField === "gender" ? "text-[#3350E8]" : "text-gray-400"}`} />
+                <div className="absolute top-1/2 -translate-y-1/2 left-0 pl-2 sm:pl-3 flex items-center pointer-events-none">
+                  <FaVenusMars className={`h-3 w-3 sm:h-4 sm:w-4 ${focusedField === "gender" ? "text-[#3350E8]" : "text-gray-400"}`} />
                 </div>
                 <select
                   name="gender"
@@ -366,7 +366,7 @@ export default function UserProfileForm() {
                   onChange={handleChange}
                   onFocus={handleFocus}
                   onBlur={handleBlur}
-                  className="w-full pl-10 pr-3 py-2 border border-gray-300 rounded-lg shadow-sm bg-white text-gray-700 focus:outline-none text-sm"
+                  className="w-full pl-8 sm:pl-10 pr-2 sm:pr-3 py-1.5 border border-gray-300 rounded-lg shadow-sm bg-white text-gray-700 focus:outline-none text-xs sm:text-sm"
                 >
                   <option value="" disabled>Select gender</option>
                   <option value="male">Male</option>
@@ -379,7 +379,7 @@ export default function UserProfileForm() {
           </div>
         </div>
 
-        <div className="mt-4 pt-3 border-t border-gray-200">
+        <div className="mt-3 pt-2 border-t border-gray-200">
           <div className="flex justify-center gap-1.5">
             {["firstName", "lastName", "email", "phone", "address", "gender"].map((key) => (
               <div
@@ -393,15 +393,15 @@ export default function UserProfileForm() {
           <p className="text-center text-xs text-gray-500 mt-1">Profile completion</p>
         </div>
 
-        <div className="mt-4">
+        <div className="pt-3">
           <button
             onClick={handleSubmit}
             disabled={isSubmitting}
-            className={`w-full py-2 px-4 font-bold text-white rounded-lg shadow-md transition-all ${
+            className={`w-full py-2 px-3 font-bold text-white rounded-lg shadow-md transition-all ${
               isSubmitting
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-[#3350E8] hover:bg-[#2a43c2]"
-            } text-sm`}
+            } text-xs sm:text-sm`}
           >
             {isSubmitting ? "Saving..." : "Save Profile"}
           </button>
