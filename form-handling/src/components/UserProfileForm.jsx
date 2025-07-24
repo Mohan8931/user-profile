@@ -258,7 +258,7 @@ export default function UserProfileForm() {
 
   return (
     <div className="fixed inset-0 bg-gradient-to-t from-[#A1BBDA] to-transparent flex items-center justify-center p-4">
-      <div className="w-full max-w-xs sm:max-w-sm bg-white/90 backdrop-blur-lg shadow-xl rounded-xl border border-white/30 px-4 py-4" style={{ maxHeight: '90vh' }}>
+      <div className="w-full max-w-xs md:max-w-lg bg-white/90 backdrop-blur-lg shadow-xl rounded-xl border border-white/30 px-4 py-4" style={{ maxHeight: '90vh' }}>
         {toast && (
           <Toast 
             message={toast.message} 
