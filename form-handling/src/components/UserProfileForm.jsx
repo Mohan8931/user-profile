@@ -63,7 +63,7 @@ const InputField = ({ name, label, type = "text", placeholder, required = false,
       {label} {required && <span className="text-red-500">*</span>}
     </label>
     <div className="relative">
-      <div className={`absolute ${rows ? 'top-2.5' : 'top-2'} left-0 pl-2 sm:pl-3 flex items-start pointer-events-none`}>
+      <div className={`absolute ${rows ? 'top-3' : 'top-1/2 -translate-y-1/2'} left-0 pl-2 sm:pl-3 flex items-center pointer-events-none`}>
         <Icon className={`h-3 w-3 sm:h-3.5 sm:w-3.5 ${focused ? "text-[#3350E8]" : "text-gray-400"}`} />
       </div>
       {rows ? (
@@ -385,7 +385,7 @@ export default function UserProfileForm() {
               <div className="mb-2 sm:mb-3">
                 <label className="block text-xs font-semibold text-gray-700 mb-1">Gender</label>
                 <div className="relative">
-                  <div className="absolute inset-y-0 left-0 pl-2 sm:pl-3 flex items-center pointer-events-none">
+                  <div className="absolute top-1/2 -translate-y-1/2 left-0 pl-2 sm:pl-3 flex items-center pointer-events-none">
                     <FaVenusMars className={`h-3 w-3 sm:h-3.5 sm:w-3.5 ${focusedField === "gender" ? "text-[#3350E8]" : "text-gray-400"}`} />
                   </div>
                   <select
